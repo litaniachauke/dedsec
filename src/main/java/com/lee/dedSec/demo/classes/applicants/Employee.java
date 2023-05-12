@@ -6,10 +6,11 @@
 package com.lee.dedSec.demo.classes.applicants;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Generated;
+import lombok.NoArgsConstructor;
 
 import java.util.Objects;
 
@@ -17,11 +18,14 @@ import java.util.Objects;
  *
  * @author Litania Chauke
  */
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 @Entity
 @Table(name="employee")
 public class Employee {
       @Id
+      @GeneratedValue(strategy = GenerationType.AUTO)
     private long empId;
     private String pos;
     private String name;
