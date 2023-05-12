@@ -23,15 +23,15 @@ public class EmpController {
     public ResponseEntity<List<Employee>> findAll(){
         return ResponseEntity.ok(repo.findAll());
     }
-    @GetMapping("/employees/{id}")
-    public ResponseEntity<Employee> findEmployeeId(@PathVariable(value="Id")Long id){
-        Employee emp = repo.findById(id).orElseThrow(()-> new ResourceNotFoundException());
+    @GetMapping("/employees/{empId}")
+    public ResponseEntity<Employee> findEmployeeId(@PathVariable(value="empId")Long empId){
+        Employee emp = repo.findById(empId).orElseThrow(()-> new ResourceNotFoundException());
         return ResponseEntity.ok().body(emp);
     }
 
-    @DeleteMapping("/employees/{id}")
-    public ResponseEntity<Void> deleteEmployeeId(@PathVariable(value="Id")Long id){
-        Employee emp = repo.findById(id).orElseThrow(()-> new ResourceNotFoundException());
+    @DeleteMapping("/employees/{empId}")
+    public ResponseEntity<Void> deleteEmployeeId(@PathVariable(value="empId")Long empId){
+        Employee emp = repo.findById(empId).orElseThrow(()-> new ResourceNotFoundException());
         repo.delete(emp);
         return ResponseEntity.ok().build();
     }
