@@ -1,6 +1,6 @@
 package com.lee.dedSec.demo.services.interfaces;
 
-import com.lee.dedSec.demo.classes.entity.Employee;
+import com.lee.dedSec.demo.entity.Employee;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 

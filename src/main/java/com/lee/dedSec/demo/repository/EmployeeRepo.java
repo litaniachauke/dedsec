@@ -1,6 +1,6 @@
-package com.lee.dedSec.demo.reposetory;
+package com.lee.dedSec.demo.repository;
 
-import com.lee.dedSec.demo.classes.entity.Employee;
+import com.lee.dedSec.demo.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 

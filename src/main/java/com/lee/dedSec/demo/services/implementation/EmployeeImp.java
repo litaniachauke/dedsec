@@ -1,7 +1,7 @@
 package com.lee.dedSec.demo.services.implementation;
 
-import com.lee.dedSec.demo.classes.entity.Employee;
-import com.lee.dedSec.demo.reposetory.EmployeeRepo;
+import com.lee.dedSec.demo.entity.Employee;
+import com.lee.dedSec.demo.repository.EmployeeRepo;
 import com.lee.dedSec.demo.services.interfaces.EmployeeInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
@@ -20,7 +20,7 @@ public class EmployeeImp implements EmployeeInterface {
     public void addEmp(Employee employee) {
         repo.save(employee);
     }
-
+ 
     @Override
     public Employee findEmployeeId(Long empId) {
         Employee emp = repo.findById(empId).orElseThrow(()-> new ResourceNotFoundException());
