@@ -6,9 +6,9 @@
 package com.lee.dedSec.demo.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
+import java.util.UUID;
 
 /**
  *
@@ -16,14 +16,16 @@ import lombok.NoArgsConstructor;
  */
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
+@ToString
 @Entity
-@Table(name="employee")
+@Table(name = "employee")
 public class Employee {
       @Id
-      @GeneratedValue(strategy = GenerationType.AUTO)
-    private long empId;
-    private String pos;
+      @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID employeeId;
+    private String position;
     private String name;
     private String surname;
 
